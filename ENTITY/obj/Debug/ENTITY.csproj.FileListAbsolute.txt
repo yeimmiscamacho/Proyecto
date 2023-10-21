@@ -1,0 +1,6 @@
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ENTITY\bin\Debug\ENTITY.dll
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ENTITY\bin\Debug\ENTITY.pdb
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ENTITY\obj\Debug\ENTITY.csproj.AssemblyReference.cache
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ENTITY\obj\Debug\ENTITY.dll
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ENTITY\obj\Debug\ENTITY.pdb

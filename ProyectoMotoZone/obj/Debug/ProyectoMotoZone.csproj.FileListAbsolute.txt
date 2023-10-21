@@ -1,0 +1,2 @@
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZone\obj\Debug\ProyectoMotoZone.csproj.AssemblyReference.cache
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZone\obj\Debug\ProyectoMotoZone.csproj.CoreCompileInputs.cache
