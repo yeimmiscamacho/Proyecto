@@ -97,6 +97,23 @@ namespace ProyectoMotoZoneGUI
             LblFecha.Text = DateTime.Now.ToLongTimeString();
 
         }
+        
 
+     
+
+        private void BtnFacturar_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmFacturacion>();
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmReporte>();
+        }
+
+        private void BtnInventario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

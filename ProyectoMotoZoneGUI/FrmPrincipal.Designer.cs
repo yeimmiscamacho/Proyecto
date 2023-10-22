@@ -33,9 +33,9 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnReporte = new System.Windows.Forms.Button();
-            this.BtnProveedor = new System.Windows.Forms.Button();
             this.BtnInventario = new System.Windows.Forms.Button();
+            this.BtnProveedor = new System.Windows.Forms.Button();
+            this.BtnReportes = new System.Windows.Forms.Button();
             this.BtnFacturar = new System.Windows.Forms.Button();
             this.BtnProducto = new System.Windows.Forms.Button();
             this.BtnCliente = new System.Windows.Forms.Button();
@@ -78,9 +78,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnReporte);
-            this.groupBox1.Controls.Add(this.BtnProveedor);
             this.groupBox1.Controls.Add(this.BtnInventario);
+            this.groupBox1.Controls.Add(this.BtnProveedor);
+            this.groupBox1.Controls.Add(this.BtnReportes);
             this.groupBox1.Controls.Add(this.BtnFacturar);
             this.groupBox1.Controls.Add(this.BtnProducto);
             this.groupBox1.Controls.Add(this.BtnCliente);
@@ -92,15 +92,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones:";
             // 
-            // BtnReporte
+            // BtnInventario
             // 
-            this.BtnReporte.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporte.Location = new System.Drawing.Point(17, 287);
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(176, 43);
-            this.BtnReporte.TabIndex = 5;
-            this.BtnReporte.Text = "Inventario";
-            this.BtnReporte.UseVisualStyleBackColor = true;
+            this.BtnInventario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventario.Location = new System.Drawing.Point(17, 287);
+            this.BtnInventario.Name = "BtnInventario";
+            this.BtnInventario.Size = new System.Drawing.Size(176, 43);
+            this.BtnInventario.TabIndex = 5;
+            this.BtnInventario.Text = "Inventario";
+            this.BtnInventario.UseVisualStyleBackColor = true;
+            this.BtnInventario.Click += new System.EventHandler(this.BtnInventario_Click);
             // 
             // BtnProveedor
             // 
@@ -113,15 +114,16 @@
             this.BtnProveedor.UseVisualStyleBackColor = true;
             this.BtnProveedor.Click += new System.EventHandler(this.BtnProveedor_Click);
             // 
-            // BtnInventario
+            // BtnReportes
             // 
-            this.BtnInventario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInventario.Location = new System.Drawing.Point(17, 243);
-            this.BtnInventario.Name = "BtnInventario";
-            this.BtnInventario.Size = new System.Drawing.Size(176, 38);
-            this.BtnInventario.TabIndex = 4;
-            this.BtnInventario.Text = "Reportes";
-            this.BtnInventario.UseVisualStyleBackColor = true;
+            this.BtnReportes.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReportes.Location = new System.Drawing.Point(17, 243);
+            this.BtnReportes.Name = "BtnReportes";
+            this.BtnReportes.Size = new System.Drawing.Size(176, 38);
+            this.BtnReportes.TabIndex = 4;
+            this.BtnReportes.Text = "Reportes";
+            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // BtnFacturar
             // 
@@ -132,6 +134,7 @@
             this.BtnFacturar.TabIndex = 3;
             this.BtnFacturar.Text = "Facturar";
             this.BtnFacturar.UseVisualStyleBackColor = true;
+            this.BtnFacturar.Click += new System.EventHandler(this.BtnFacturar_Click_1);
             // 
             // BtnProducto
             // 
@@ -176,7 +179,6 @@
             this.LblHora.Size = new System.Drawing.Size(60, 24);
             this.LblHora.TabIndex = 9;
             this.LblHora.Text = "label1";
-          
             // 
             // LblFecha
             // 
@@ -187,7 +189,6 @@
             this.LblFecha.Size = new System.Drawing.Size(35, 13);
             this.LblFecha.TabIndex = 10;
             this.LblFecha.Text = "label1";
-            
             // 
             // FrmPrincipal
             // 
@@ -219,10 +220,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BtnCliente;
         private System.Windows.Forms.Button BtnProveedor;
-        private System.Windows.Forms.Button BtnInventario;
+        private System.Windows.Forms.Button BtnReportes;
         private System.Windows.Forms.Button BtnFacturar;
         private System.Windows.Forms.Button BtnProducto;
-        private System.Windows.Forms.Button BtnReporte;
+        private System.Windows.Forms.Button BtnInventario;
         private System.Windows.Forms.Label LblHora;
         private System.Windows.Forms.Label LblFecha;
     }

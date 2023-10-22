@@ -30,3 +30,5 @@ C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZoneGUI\bin
 C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZoneGUI\obj\Debug\ProyectoMotoZoneGUI.csproj.CopyComplete
 C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZoneGUI\obj\Debug\ProyectoMotoZoneGUI.exe
 C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZoneGUI\obj\Debug\ProyectoMotoZoneGUI.pdb
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZoneGUI\obj\Debug\ProyectoMotoZoneGUI.FrmFacturacion.resources
+C:\Users\yeimm\Documents\PROGRAMACION 3\ProyectoMotoZone\ProyectoMotoZoneGUI\obj\Debug\ProyectoMotoZoneGUI.FrmReporte.resources
