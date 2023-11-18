@@ -113,7 +113,9 @@ namespace ProyectoMotoZoneGUI
 
         private void BtnInventario_Click(object sender, EventArgs e)
         {
-
+            
+                AbrirFormulario<FrmInventario>();
+            
         }
     }
 }
