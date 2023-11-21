@@ -39,13 +39,22 @@ namespace ProyectoMotoZoneGUI
 
         private static IList<Factura> datos = new List<Factura>();
 
-        public int GenerarCodigo()
-        {
+        //public int GenerarCodigo()
+        //{
 
+        //    consultar = facturaService.Consultar();
+        //    datos = consultar.facturas;
+        //    int codigo = datos.Count();
+        //    return codigo;
+        //}
+        public int ObtenerCantidadFacturas()
+        {
             consultar = facturaService.Consultar();
-            datos = consultar.facturas;
-            int codigo = datos.Count();
-            return codigo;
+            if (consultar != null && consultar.facturas != null)
+            {
+                return consultar.facturas.Count();
+            }
+            return 2; // o un valor predeterminado según tus necesidades
         }
 
         private void BtnConsultarProductos_Click(object sender, EventArgs e)
@@ -112,21 +121,21 @@ namespace ProyectoMotoZoneGUI
 
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
         {
-            int cantida = Convert.ToInt32(Txtcantidad.Text);
+            int cantidad = Convert.ToInt32(Txtcantidad.Text);
             string codigo = TxtcodigoProducto.Text;
             producto = productoService.Buscar(codigo);
-            int a = producto.Cantidad - cantida;
+            int a = producto.Cantidad - cantidad;
             if ((producto.Cantidad >= 0) && (a >= 0))
             {
                 int cantidadValidar;
-                cantidadValidar = producto.DescontarProducto(producto.Cantidad, cantida);
+                cantidadValidar = producto.DescontarProducto(producto.Cantidad, cantidad);
                 string m = productoService.Modificarcantidad(producto.CodigoProducto, cantidadValidar);
-                string codigodetalle = Convert.ToString(GenerarCodigo() + 1);
+                string codigodetalle = Convert.ToString(ObtenerCantidadFacturas() + 1);
                 string identificacion = TxtIdentificacion.Text;
                 string nombre = TxtNombre.Text;
                 string marca = TxtMarca.Text;
 
-                detalles = factura.AgregarDetalles(producto, cantida, codigodetalle, identificacion, nombre, marca, factura);
+                detalles = factura.AgregarDetalles(producto, cantidad, codigodetalle, identificacion, nombre, marca, factura);
                 Txtsubtotal.Text = Convert.ToString(factura.CalcularSubTotalFactura());
                 TxtTotalIva.Text = Convert.ToString(factura.CalcularTotalIva());
                 TxtTotalFactura.Text = Convert.ToString(factura.CalcularTotalFactura());
@@ -200,7 +209,7 @@ namespace ProyectoMotoZoneGUI
             factura.TotalFactura = Convert.ToDouble(TxtTotalFactura.Text);
             factura.Identificacion = TxtIdentificacion.Text;
             factura.Nombre = TxtNombre.Text;
-            factura.CodigoFactura = GenerarCodigo() + 1;
+            factura.CodigoFactura = ObtenerCantidadFacturas() + 1;
             string mensaje = facturaService.GuardarFactura(factura);
             MessageBox.Show(mensaje);
 

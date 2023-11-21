@@ -34,7 +34,7 @@
             this.BtnCargarProveedores = new System.Windows.Forms.Button();
             this.DtgProveedores = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtTotalProveedor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,19 +91,19 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Total proveedores";
             // 
-            // textBox2
+            // TxtTotalProveedor
             // 
-            this.textBox2.Location = new System.Drawing.Point(168, 344);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.TxtTotalProveedor.Location = new System.Drawing.Point(168, 344);
+            this.TxtTotalProveedor.Name = "TxtTotalProveedor";
+            this.TxtTotalProveedor.Size = new System.Drawing.Size(100, 20);
+            this.TxtTotalProveedor.TabIndex = 6;
             // 
             // FrmConsutaProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 398);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TxtTotalProveedor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DtgProveedores);
             this.Controls.Add(this.BtnCargarProveedores);
@@ -126,6 +126,6 @@
         private System.Windows.Forms.Button BtnCargarProveedores;
         private System.Windows.Forms.DataGridView DtgProveedores;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtTotalProveedor;
     }
 }

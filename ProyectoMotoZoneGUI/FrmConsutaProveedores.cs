@@ -33,6 +33,10 @@ namespace ProyectoMotoZoneGUI
         {
             ProveedorService proveedorService = new ProveedorService(ConfigConnection.connectionString);
             DtgProveedores.DataSource = proveedorService.Consultar();
+          
+
+            
+
         }
         private void DtgProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

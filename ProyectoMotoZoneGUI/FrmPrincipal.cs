@@ -88,19 +88,11 @@ namespace ProyectoMotoZoneGUI
        
         private void FechayHora_tick(object sender, EventArgs e)
         {
-            LblHora.Text = DateTime.Now.ToLongTimeString();
+            LblFecha.Text = DateTime.Now.ToLongDateString();
         }
 
-        private void Hora_Tick(object sender, EventArgs e)
-        {
-            LblHora.Text = DateTime.Now.ToLongTimeString();
-            LblFecha.Text = DateTime.Now.ToLongTimeString();
-
-        }
+       
         
-
-     
-
         private void BtnFacturar_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario<FrmFacturacion>();
@@ -116,6 +108,12 @@ namespace ProyectoMotoZoneGUI
             
                 AbrirFormulario<FrmInventario>();
             
+        }
+
+        private void LblHora_Click(object sender, EventArgs e)
+        {
+            LblHora.Text = DateTime.Now.ToLongTimeString();
+            LblFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

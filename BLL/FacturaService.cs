@@ -150,21 +150,7 @@ namespace BLL
             return null;
         }
 
-        //public string GenerarPdf(List<DetalleFactura> detalles, string ruta, Factura factura)
-        //{
-        //    DocumentoPdf documentoPdf = new DocumentoPdf();
-        //    try
-        //    {
-        //        documentoPdf.GuardarPdf(detalles, ruta, factura);
-        //        return " Se genero el documento ";
-        //    }
-        //    catch (Exception e)
-        //    {
-
-        //        return "error al generar el pdf" + e;
-        //    }
-
-        //}
+        
     }
 }
 public class RespuestaConsultar
