@@ -1,7 +1,9 @@
 ﻿using ENTITY;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,8 +66,20 @@ namespace DAL
             factura.SubTotalFactura = (double)reader["subtotalfactura"];
             factura.TotalIvaFactura = (double)reader["totalivafactura"];
             factura.TotalFactura = (double)reader["totalfactura"];
-            factura.FechaFactura = Convert.ToDateTime((DateTime)reader["fechafactura"]);
 
+            string fechaString = (string)reader["fechafactura"];
+            string formato = "MMM dd yyyy h:mmtt";
+
+            Console.WriteLine("Cadena de fecha: " + fechaString);
+            try
+            {
+                DateTime fecha = DateTime.ParseExact(fechaString, formato, CultureInfo.InvariantCulture);
+                factura.FechaFactura = fecha;
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Error al analizar la fecha: " + ex.Message);
+            }
 
             return factura;
         }
@@ -75,7 +89,7 @@ namespace DAL
             facturas.Clear();
             using (var comando = connection.CreateCommand())
             {
-                comando.CommandText = "Select * from Factura";
+                comando.CommandText = "SELECT * FROM Factura";
                 var Reader = comando.ExecuteReader();
                 while (Reader.Read())
                 {

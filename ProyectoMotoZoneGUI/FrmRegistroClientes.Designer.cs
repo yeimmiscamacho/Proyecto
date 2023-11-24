@@ -227,6 +227,9 @@
             // CmbGenero
             // 
             this.CmbGenero.FormattingEnabled = true;
+            this.CmbGenero.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
             this.CmbGenero.Location = new System.Drawing.Point(142, 180);
             this.CmbGenero.Name = "CmbGenero";
             this.CmbGenero.Size = new System.Drawing.Size(119, 21);
