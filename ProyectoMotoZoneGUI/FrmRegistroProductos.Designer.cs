@@ -107,6 +107,7 @@
             this.TxtIva.Name = "TxtIva";
             this.TxtIva.Size = new System.Drawing.Size(118, 20);
             this.TxtIva.TabIndex = 15;
+            this.TxtIva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIva_KeyPress);
             // 
             // TxtCosto
             // 
@@ -114,6 +115,7 @@
             this.TxtCosto.Name = "TxtCosto";
             this.TxtCosto.Size = new System.Drawing.Size(118, 20);
             this.TxtCosto.TabIndex = 11;
+            this.TxtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCosto_KeyPress);
             // 
             // TxtCantidad
             // 
@@ -121,6 +123,7 @@
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(118, 20);
             this.TxtCantidad.TabIndex = 10;
+            this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad_KeyPress);
             // 
             // TxtMarca
             // 
@@ -135,6 +138,7 @@
             this.TxtColor.Name = "TxtColor";
             this.TxtColor.Size = new System.Drawing.Size(118, 20);
             this.TxtColor.TabIndex = 43;
+            this.TxtColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtColor_KeyPress);
             // 
             // TxtCodigoProducto
             // 
@@ -142,6 +146,7 @@
             this.TxtCodigoProducto.Name = "TxtCodigoProducto";
             this.TxtCodigoProducto.Size = new System.Drawing.Size(118, 20);
             this.TxtCodigoProducto.TabIndex = 6;
+            this.TxtCodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoProducto_KeyPress);
             // 
             // label6
             // 
@@ -241,6 +246,7 @@
             this.TxtCodigoProveedor.Name = "TxtCodigoProveedor";
             this.TxtCodigoProveedor.Size = new System.Drawing.Size(105, 20);
             this.TxtCodigoProveedor.TabIndex = 1;
+            this.TxtCodigoProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoProveedor_KeyPress);
             // 
             // label8
             // 

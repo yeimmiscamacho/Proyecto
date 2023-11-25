@@ -119,5 +119,13 @@ namespace ProyectoMotoZoneGUI
             detalles = detalleFacturaService.Buscar(codigofactura);
             pintarDetalles(detalles);
         }
+
+        private void TxtNombrefiltrar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

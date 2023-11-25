@@ -239,6 +239,7 @@
             this.Txtcantidad.Name = "Txtcantidad";
             this.Txtcantidad.Size = new System.Drawing.Size(100, 20);
             this.Txtcantidad.TabIndex = 4;
+            this.Txtcantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcantidad_KeyPress);
             // 
             // label14
             // 
@@ -341,6 +342,7 @@
             this.TxtcodigoProducto.Name = "TxtcodigoProducto";
             this.TxtcodigoProducto.Size = new System.Drawing.Size(114, 20);
             this.TxtcodigoProducto.TabIndex = 6;
+            this.TxtcodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtcodigoProducto_KeyPress);
             // 
             // label13
             // 
@@ -489,6 +491,7 @@
             this.TxtIdentificacion.Name = "TxtIdentificacion";
             this.TxtIdentificacion.Size = new System.Drawing.Size(122, 20);
             this.TxtIdentificacion.TabIndex = 7;
+            this.TxtIdentificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdentificacion_KeyPress);
             // 
             // label7
             // 

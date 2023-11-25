@@ -223,6 +223,7 @@
             this.TxtNombrefiltrar.Name = "TxtNombrefiltrar";
             this.TxtNombrefiltrar.Size = new System.Drawing.Size(91, 22);
             this.TxtNombrefiltrar.TabIndex = 2;
+            this.TxtNombrefiltrar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombrefiltrar_KeyPress);
             // 
             // label2
             // 
