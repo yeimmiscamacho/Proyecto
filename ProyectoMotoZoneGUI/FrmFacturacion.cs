@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoMotoZoneGUI
 {
@@ -39,25 +40,26 @@ namespace ProyectoMotoZoneGUI
 
         private static IList<Factura> datos = new List<Factura>();
 
-        public int GenerarCodigo()
+        public int GenerarCodigoFactura()
         {
-
             consultar = facturaService.Consultar();
             datos = consultar.facturas;
-            int codigo = 0;
+            int codigofactura = 0;
             if (datos != null)
-                codigo = datos.Count();
-            return codigo;
+                codigofactura = datos.Count();
+            return codigofactura + 1;
         }
-        //public int ObtenerCantidadFacturas()
-        //{
-        //    consultar = facturaService.Consultar();
-        //    if (consultar != null && consultar.facturas != null)
-        //    {
-        //        return consultar.facturas.Count();
-        //    }
-        //    return 0; 
-        //}
+
+        public int GenerarCodigoFacturaDetalle()
+        {
+            RespuestConsulta respuestaConsulta = detalleService.Consultar();
+           
+            int codigofactura = 0;
+            if (respuestaConsulta.detalles != null)
+                codigofactura = respuestaConsulta.detalles.Count();
+            return codigofactura;
+        }
+
 
         private void BtnConsultarProductos_Click(object sender, EventArgs e)
         {
@@ -120,7 +122,7 @@ namespace ProyectoMotoZoneGUI
                 this.Hide();
             }
         }
-
+        
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
         {
             int cantidad = Convert.ToInt32(Txtcantidad.Text);
@@ -130,17 +132,19 @@ namespace ProyectoMotoZoneGUI
             if ((producto.Cantidad >= 0) && (a >= 0))
             {
                 int cantidadValidar;
-                cantidadValidar = producto.DescontarProducto(producto.Cantidad, cantidad);
-                string m = productoService.Modificarcantidad(producto.CodigoProducto, cantidadValidar);
-                string codigodetalle = Convert.ToString(GenerarCodigo() + 1);
+                //cantidadValidar = producto.DescontarProducto(producto.Cantidad, cantidad);
+                //string m = productoService.Modificarcantidad(producto.CodigoProducto, cantidadValidar);
+                //string codigodetalle = Convert.ToString(GenerarCodigo() + 1);
                 string identificacion = TxtIdentificacion.Text;
                 string nombre = TxtNombre.Text;
                 string marca = TxtMarca.Text;
+                
 
-                detalles = factura.AgregarDetalles(producto, cantidad, codigodetalle, identificacion, nombre, marca, factura);
+                detalles = factura.AgregarDetalles(producto, cantidad, identificacion, nombre, marca, factura);
                 Txtsubtotal.Text = Convert.ToString(factura.CalcularSubTotalFactura());
                 TxtTotalIva.Text = Convert.ToString(factura.CalcularTotalIva());
                 TxtTotalFactura.Text = Convert.ToString(factura.CalcularTotalFactura());
+           
                 pintarTabla(detalles);
                 LimpiarDetalle();
             }
@@ -183,7 +187,7 @@ namespace ProyectoMotoZoneGUI
                 DtgDetalles.Rows.Add();
                 DtgDetalles.Rows[n].Cells[0].Value = item.Producto.CodigoProducto;
                 DtgDetalles.Rows[n].Cells[1].Value = item.Producto.Marca;
-                DtgDetalles.Rows[n].Cells[2].Value = Txtcantidad.Text;
+                DtgDetalles.Rows[n].Cells[2].Value = item.Cantidad;
                 DtgDetalles.Rows[n].Cells[3].Value = item.SubTotal;
                 DtgDetalles.Rows[n].Cells[4].Value = item.TotalIva;
                 DtgDetalles.Rows[n].Cells[5].Value = item.Total;
@@ -194,8 +198,10 @@ namespace ProyectoMotoZoneGUI
         }
         private void GuardarDetalles(List<DetalleFactura> Detalles)
         {
-            Detalles = detalles;
-            detalleService.GuardarDetalle(Detalles);
+            //Detalles = detalles;
+            //detalleService.GuardarDetalle(Detalles);
+            
+
 
 
         }
@@ -211,16 +217,31 @@ namespace ProyectoMotoZoneGUI
             factura.TotalFactura = Convert.ToDouble(TxtTotalFactura.Text);
             factura.Identificacion = TxtIdentificacion.Text;
             factura.Nombre = TxtNombre.Text;
-            factura.CodigoFactura = GenerarCodigo() + 1;
+            factura.CodigoFactura = GenerarCodigoFactura()+ "";
+            
+            
             string mensaje = facturaService.GuardarFactura(factura);
-            MessageBox.Show(mensaje);
 
+            for (int i = 0; i < detalles.Count; i++)
+            {
+                DetalleFactura detalle = detalles[i];
+                int cantidadValidar;
+                cantidadValidar = producto.DescontarProducto(producto.Cantidad, detalle.Cantidad);
+                string m = productoService.Modificarcantidad(producto.CodigoProducto, cantidadValidar);
+                detalles[i].CodigoFactura = factura.CodigoFactura;
+                detalles[i].Factura = factura;
+            }
+            detalleService.GuardarDetalle(detalles);
+            detalles.Clear();
+            MessageBox.Show(mensaje);
+           
         }
        
         private void QuitarDetalle(string id)
         {
             DetalleFactura detalle = detalles.Find(d => d.Producto.CodigoProducto == id);
             detalles.Remove(detalle);
+
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -315,7 +336,7 @@ namespace ProyectoMotoZoneGUI
 
         private void BtnGenerarFactura_Click(object sender, EventArgs e)
         {
-            detalleService.GuardarDetalle(factura.EnviarDetalle());
+            //detalleService.GuardarDetalle(factura.EnviarDetalle());
             GuardarFactura();
             DtgDetalles.Rows.Clear();
             Limpiar();
@@ -345,5 +366,7 @@ namespace ProyectoMotoZoneGUI
                 e.Handled = true;
             }
         }
+
+        
     }
 }

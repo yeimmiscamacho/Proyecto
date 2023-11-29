@@ -60,7 +60,7 @@ namespace DAL
         public Factura Mapear(SqlDataReader reader)
         {
             Factura factura = new Factura();
-            factura.CodigoFactura = Convert.ToInt32((string)reader["codigofactura"]);
+            factura.CodigoFactura = (string)reader["codigofactura"];
             factura.Identificacion = (string)reader["identificacion"];
             factura.Nombre = (string)reader["nombrefactura"];
             factura.SubTotalFactura = (double)reader["subtotalfactura"];
@@ -114,6 +114,7 @@ namespace DAL
             facturas = Consultar();
             return facturas.Where(p => p.FechaFactura.Equals(fecha)).ToList();
         }
+
     }
 }
     

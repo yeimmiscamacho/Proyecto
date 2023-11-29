@@ -15,7 +15,9 @@ namespace ProyectoMotoZoneGUI
     {
         public FrmPrincipal()
         {
-            InitializeComponent();
+            InitializeComponent(); LblHora.Text = DateTime.Now.ToLongTimeString();
+            LblFecha.Text = DateTime.Now.ToLongDateString();
+            
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -112,8 +114,8 @@ namespace ProyectoMotoZoneGUI
 
         private void LblHora_Click(object sender, EventArgs e)
         {
-            LblHora.Text = DateTime.Now.ToLongTimeString();
-            LblFecha.Text = DateTime.Now.ToLongDateString();
+            //LblHora.Text = DateTime.Now.ToLongTimeString();
+            //LblFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

@@ -85,18 +85,19 @@ namespace ProyectoMotoZoneGUI
 
                 DtgDetalles.Rows.Add();
                 DtgDetalles.Rows[n].Cells[0].Value = item.CodigoDetalle;
-                DtgDetalles.Rows[n].Cells[1].Value = item.CodigoProducto;
-                DtgDetalles.Rows[n].Cells[2].Value = item.Marca;
-                DtgDetalles.Rows[n].Cells[3].Value = item.Cantidad;
-                DtgDetalles.Rows[n].Cells[4].Value = item.SubTotal;
-                DtgDetalles.Rows[n].Cells[5].Value = item.TotalIva;
-                DtgDetalles.Rows[n].Cells[6].Value = item.Total;
+                DtgDetalles.Rows[n].Cells[1].Value = item.CodigoFactura;
+                DtgDetalles.Rows[n].Cells[2].Value = item.CodigoProducto;
+                DtgDetalles.Rows[n].Cells[3].Value = item.Marca;
+                DtgDetalles.Rows[n].Cells[4].Value = item.Cantidad;
+                DtgDetalles.Rows[n].Cells[5].Value = item.SubTotal;
+                DtgDetalles.Rows[n].Cells[6].Value = item.TotalIva;
+                DtgDetalles.Rows[n].Cells[7].Value = item.Total;
+
 
                 n++;
             }
 
-        }
-
+         }
         private void BtnFiltrarFecha_Click(object sender, EventArgs e)
         {
             DateTime fecha = Convert.ToDateTime(TxtFechainventario.Text);
@@ -110,7 +111,6 @@ namespace ProyectoMotoZoneGUI
 
             }
         }
-
         private void DtgFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DetalleFacturaService detalleFacturaService = new DetalleFacturaService(ConfigConnection.connectionString);
@@ -127,5 +127,7 @@ namespace ProyectoMotoZoneGUI
                 e.Handled = true;
             }
         }
+
+       
     }
 }

@@ -8,7 +8,7 @@ namespace ENTITY
 {
    public class Factura
     {
-        public int CodigoFactura { get; set; }
+        public string CodigoFactura { get; set; }
         public DateTime FechaFactura { get; set; }
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
@@ -23,9 +23,15 @@ namespace ENTITY
 
 
 
-        public List<DetalleFactura> AgregarDetalles(Producto producto, int cantidad, string codigodetalle, string identificacion, string nombre, string marca, Factura factura)
-        {
-            DetalleFactura detalleFactura = new DetalleFactura(producto, cantidad, codigodetalle, identificacion, nombre, marca, factura);
+        public List<DetalleFactura> AgregarDetalles(
+            Producto producto, 
+            int cantidad, 
+            string identificacion,
+            string nombre, 
+            string marca, 
+            Factura factura
+        ){
+            DetalleFactura detalleFactura = new DetalleFactura(producto, cantidad, identificacion, nombre, marca, factura);
             detalleFactura.Producto.CodigoProducto = producto.CodigoProducto;
             detalleFactura.Cantidad = cantidad;
             detalleFactura.IdentificacionCliente = identificacion;
@@ -59,5 +65,7 @@ namespace ENTITY
             return TotalFactura = SubTotalFactura + TotalIvaFactura;
 
         }
+
+       
     }
 }

@@ -25,10 +25,10 @@ namespace DAL
             {
                 using (var comando = connection.CreateCommand())
                 {
-                    comando.CommandText = " Insert  Into DetalleFactura (CodigoDetalle,CodigoProducto,Marca,Cantidad,Subtotal,Total,TotalIva)" +
-                       "Values(@codigodetalle,@codigoproducto,@Marca,@cantidad,@subtotal,@total,@totaliva)";
-                    comando.Parameters.AddWithValue("@codigodetalle", item.CodigoDetalle);
+                    comando.CommandText = " Insert  Into DetalleFactura (CodigoProducto,CodigoFactura,Marca,Cantidad,Subtotal,Total,TotalIva)" +
+                       "Values(@codigoproducto,@Codigofactura,@Marca,@cantidad,@subtotal,@total,@totaliva)";
                     comando.Parameters.AddWithValue("@codigoproducto", item.Producto.CodigoProducto);
+                    comando.Parameters.AddWithValue("@Codigofactura", item.Factura.CodigoFactura);
                     comando.Parameters.AddWithValue("@Marca", item.Producto.Marca);
                     comando.Parameters.AddWithValue("@cantidad", item.Cantidad);
                     comando.Parameters.AddWithValue("@subtotal", item.SubTotal);
@@ -62,8 +62,9 @@ namespace DAL
         {
 
             DetalleFactura detalleFactura = new DetalleFactura();
-            detalleFactura.CodigoDetalle = (string)reader["codigodetalle"];
+            detalleFactura.CodigoDetalle = (int)reader["codigodetalle"];
             detalleFactura.CodigoProducto = (string)reader["codigoproducto"];
+            detalleFactura.CodigoFactura = (string)reader["codigofactura"];
             detalleFactura.Marca = (string)reader["Marca"];
             detalleFactura.Cantidad = (int)reader["cantidad"];
             detalleFactura.SubTotal = (double)reader["subtotal"];
@@ -79,7 +80,7 @@ namespace DAL
             List<DetalleFactura> detalles = new List<DetalleFactura>();
             using (var Comando = connection.CreateCommand())
             {
-                Comando.CommandText = "Select * from DETALLEFACTURA where CODIGODETALLE =@codigodetalle";
+                Comando.CommandText = "SELECT * FROM DetalleFactura WHERE CodigoFactura = @codigodetalle";
                 Comando.Parameters.AddWithValue("@codigodetalle", codigo);
                 var Reader = Comando.ExecuteReader();
                 if (Reader.HasRows)

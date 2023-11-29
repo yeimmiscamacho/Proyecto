@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Dtgproductos = new System.Windows.Forms.DataGridView();
             this.Btncargarproductos = new System.Windows.Forms.Button();
+            this.Dtgproductos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dtgproductos)).BeginInit();
             this.SuspendLayout();
@@ -46,14 +46,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "REPORTE";
             // 
-            // Dtgproductos
-            // 
-            this.Dtgproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dtgproductos.Location = new System.Drawing.Point(30, 38);
-            this.Dtgproductos.Name = "Dtgproductos";
-            this.Dtgproductos.Size = new System.Drawing.Size(716, 211);
-            this.Dtgproductos.TabIndex = 0;
-            // 
             // Btncargarproductos
             // 
             this.Btncargarproductos.Location = new System.Drawing.Point(573, 305);
@@ -64,11 +56,19 @@
             this.Btncargarproductos.UseVisualStyleBackColor = true;
             this.Btncargarproductos.Click += new System.EventHandler(this.Btncargarproductos_Click);
             // 
+            // Dtgproductos
+            // 
+            this.Dtgproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dtgproductos.Location = new System.Drawing.Point(30, 38);
+            this.Dtgproductos.Name = "Dtgproductos";
+            this.Dtgproductos.Size = new System.Drawing.Size(716, 211);
+            this.Dtgproductos.TabIndex = 0;
+            // 
             // FrmReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(831, 465);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmReporte";
             this.Text = "FrmReporte";

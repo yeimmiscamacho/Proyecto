@@ -9,7 +9,8 @@ namespace ENTITY
     public class DetalleFactura
     {
         public string CodigoRegistro { get; set; }
-        public string CodigoDetalle { get; set; }
+        public int CodigoDetalle { get; set; }
+        public string CodigoFactura { get; set; }
         public int Cantidad { get; set; }
         public double SubTotal { get; set; }
         public double TotalIva { get; set; }
@@ -27,10 +28,11 @@ namespace ENTITY
         {
 
         }
-        public DetalleFactura(Producto producto, int cantidad, string codigodetalle, string identificacion, string nombre, string marca, Factura factura)
+        public DetalleFactura(Producto producto, int cantidad, int codigodetalle, string codigofactura, string identificacion, string nombre, string marca, Factura factura)
         {
             CodigoDetalle = codigodetalle;
             Producto = producto;
+            CodigoFactura = codigofactura;
             Cantidad = cantidad;
             IdentificacionCliente = identificacion;
             Nombre = nombre;
@@ -38,6 +40,16 @@ namespace ENTITY
             Factura = factura;
         }
 
+
+        public DetalleFactura(Producto producto, int cantidad, string identificacion, string nombre, string marca, Factura factura)
+        {
+            Producto = producto;
+            Cantidad = cantidad;
+            IdentificacionCliente = identificacion;
+            Nombre = nombre;
+            Marca = marca;
+            Factura = factura;
+        }
 
         public void CalcularSubTotal()
         {
